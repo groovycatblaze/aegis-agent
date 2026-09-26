@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aegis Console</title>
+<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="logo">◈</span> Aegis <span class="sub">Secure Agentic Workflows</span></div>
+  <div class="controls">
+    <label>Signed in as
+      <select id="persona"></select>
+    </label>
+    <div class="seg" id="mode">
+      <button data-mode="aegis" class="on">Aegis</button>
+      <button data-mode="baseline">Baseline</button>
+    </div>
+    <span id="health" class="badge">…</span>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button data-tab="agent" class="on">Agent</button>
+  <button data-tab="approvals">Approvals <span id="apr-count" class="count hidden"></span></button>
+  <button data-tab="records">Records</button>
+  <button data-tab="runs">Run history</button>
+  <button data-tab="eval">Evaluation</button>
+</nav>
+
+<main>
+  <section id="tab-agent" class="tab on">
+    <div class="grid">
+      <div class="col">
+        <div class="card">
+          <h2>Ask the agent</h2>
+          <textarea id="request" rows="4" placeholder="e.g. My laptop is failing and I need a replacement before next Monday."></textarea>
+          <div class="row">
+            <div id="examples" class="chips"></div>
+            <button id="run" class="primary">Run</button>
+          </div>
+          <p class="hint" id="mode-hint"></p>
+        </div>
+        <div id="result"></div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <h2>Execution trace</h2>
+          <div id="trace" class="trace empty">Run a request to see every step: plan, LLM calls, gateway decisions, MCP tool calls, approvals and verification.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tab-approvals" class="tab">
+    <div class="card"><h2>Approval inbox</h2><div id="approvals"></div></div>
+  </section>
+
+  <section id="tab-records" class="tab">
+    <div class="card">
+      <div class="row between">
+        <h2>Systems of record</h2>
+        <div class="seg" id="rec-kind">
+          <button data-kind="tickets" class="on">Tickets</button>
+          <button data-kind="expenses">Expenses</button>
+          <button data-kind="outbox">Outbox</button>
+          <button data-kind="audit_log">Audit log</button>
+        </div>
+      </div>
+      <div id="records" class="table-wrap"></div>
+    </div>
+  </section>
+
+  <section id="tab-runs" class="tab">
+    <div class="card"><h2>Run history</h2><div id="runs" class="table-wrap"></div></div>
+  </section>
+
+  <section id="tab-eval" class="tab">
+    <div id="eval"></div>
+  </section>
+</main>
+<script src="/static/app.js"></script>
+</body>
+</html>

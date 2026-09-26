@@ -1,0 +1,40 @@
+{"query": "How many days of annual leave do I get per year?", "relevant": ["hr-leave-policy"]}
+{"query": "How many unused leave days can I carry forward to next year?", "relevant": ["hr-leave-policy"]}
+{"query": "How many days of sick leave do employees get?", "relevant": ["hr-leave-policy"]}
+{"query": "How long is parental leave for birthing parents?", "relevant": ["hr-leave-policy"]}
+{"query": "How many days a week can I work from home on a hybrid contract?", "relevant": ["remote-work-policy"]}
+{"query": "Is there a home-office setup allowance for hybrid employees?", "relevant": ["remote-work-policy"]}
+{"query": "What is the notice period after confirmation?", "relevant": ["employee-handbook"]}
+{"query": "How long is the probation period for new employees?", "relevant": ["employee-handbook"]}
+{"query": "What is the minimum password length?", "relevant": ["information-security-policy"]}
+{"query": "What are the core collaboration hours?", "relevant": ["employee-handbook"]}
+{"query": "How long does it take to provision standard application access?", "relevant": ["it-access-policy"]}
+{"query": "Within how many days must I return my old laptop after receiving a replacement?", "relevant": ["it-hardware-policy"]}
+{"query": "Who gets a USB-C docking station?", "relevant": ["equipment-accessories-policy"]}
+{"query": "What is the per person limit for client entertainment?", "relevant": ["expense-policy"]}
+{"query": "Within how many days of the expense must claims be submitted?", "relevant": ["expense-policy"]}
+{"query": "How many public holidays does the company observe each year?", "relevant": ["hr-leave-policy"]}
+{"query": "When do performance reviews take place?", "relevant": ["employee-handbook"]}
+{"query": "For how many days can I work from another country without prior approval?", "relevant": ["remote-work-policy"]}
+{"query": "How long does administrator or production access take to be granted?", "relevant": ["it-access-policy"]}
+{"query": "How many business days before a new hire's start date must managers request equipment?", "relevant": ["onboarding-policy"]}
+{"query": "laptop replacement eligibility after 36 months", "relevant": ["it-hardware-policy"]}
+{"query": "what priority is a swollen battery", "relevant": ["it-hardware-policy"]}
+{"query": "hotel cap in tier 2 cities", "relevant": ["travel-policy"]}
+{"query": "meal per diem for Jaipur", "relevant": ["travel-policy"]}
+{"query": "which cities are tier 1", "relevant": ["travel-policy"]}
+{"query": "team lunch limit per person", "relevant": ["expense-policy"]}
+{"query": "claims above 50,000 need approval from whom", "relevant": ["expense-policy"]}
+{"query": "is alcohol reimbursable", "relevant": ["expense-policy"]}
+{"query": "how do I request access to Salesforce", "relevant": ["it-access-policy"]}
+{"query": "quarterly access review by managers", "relevant": ["it-access-policy"]}
+{"query": "response time for critical P1 incidents", "relevant": ["it-support-sla"]}
+{"query": "who can see my salary", "relevant": ["data-privacy-policy"]}
+{"query": "can managers view compensation of their reports", "relevant": ["data-privacy-policy"]}
+{"query": "sending company data to a personal email address", "relevant": ["information-security-policy"]}
+{"query": "how to report phishing", "relevant": ["information-security-policy"]}
+{"query": "what equipment does a new hire get", "relevant": ["onboarding-policy"]}
+{"query": "replace a faulty mouse", "relevant": ["equipment-accessories-policy"]}
+{"query": "approval for a fully remote role", "relevant": ["remote-work-policy"]}
+{"query": "medical certificate for sick leave", "relevant": ["hr-leave-policy"]}
+{"query": "harassment and code of conduct", "relevant": ["employee-handbook"]}

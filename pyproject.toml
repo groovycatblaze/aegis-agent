@@ -1,0 +1,13 @@
+[project]
+name = "aegis-agent"
+version = "1.0.0"
+description = "Secure agentic enterprise workflow platform: planning, RAG, MCP tools, deterministic authorization, human approval, tracing and evaluation."
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"

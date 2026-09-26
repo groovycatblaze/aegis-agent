@@ -1,0 +1,58 @@
+# Aegis governance policy. This file - not the LLM and not the policy documents
+# in the knowledge base - decides what the agent may do. Changing it is a
+# reviewed code change.
+
+[company]
+domain = "veridian.example"
+# Internal distribution lists that reach many people: sending to them is HIGH risk.
+distribution_lists = ["all-staff@veridian.example", "engineering-all@veridian.example", "sales-all@veridian.example"]
+
+[thresholds]
+expense_manager_approval_above = 50000     # INR
+expense_finance_approval_above = 200000    # INR
+hardware_manager_approval_above = 75000    # INR
+max_email_recipients = 3
+
+[budgets]
+max_tool_calls = 16
+max_side_effects = 5
+
+# risk: LOW | MEDIUM | HIGH | CRITICAL
+# side_effect: changes state or moves data out of a system of record
+[tools]
+search_policy             = { risk = "LOW",      side_effect = false }
+get_employee              = { risk = "LOW",      side_effect = false }
+get_manager               = { risk = "LOW",      side_effect = false }
+get_direct_reports        = { risk = "LOW",      side_effect = false }
+get_asset                 = { risk = "LOW",      side_effect = false }
+search_employees          = { risk = "LOW",      side_effect = false }
+export_employee_directory = { risk = "HIGH",     side_effect = true  }
+create_ticket             = { risk = "MEDIUM",   side_effect = true  }
+get_ticket                = { risk = "LOW",      side_effect = false }
+list_tickets              = { risk = "LOW",      side_effect = false }
+update_ticket             = { risk = "MEDIUM",   side_effect = true  }
+close_ticket              = { risk = "MEDIUM",   side_effect = true  }
+delete_record             = { risk = "CRITICAL", side_effect = true  }
+calculate_reimbursement   = { risk = "LOW",      side_effect = false }
+check_expense_policy      = { risk = "LOW",      side_effect = false }
+submit_expense            = { risk = "MEDIUM",   side_effect = true  }
+get_expense               = { risk = "LOW",      side_effect = false }
+list_expenses             = { risk = "LOW",      side_effect = false }
+approve_expense           = { risk = "HIGH",     side_effect = true  }
+send_email                = { risk = "MEDIUM",   side_effect = true  }
+send_notification         = { risk = "LOW",      side_effect = true  }
+
+# Role-based access control. "@role" inherits another role's tools.
+[roles]
+employee = ["search_policy", "get_employee", "get_manager", "get_asset", "search_employees",
+            "create_ticket", "get_ticket", "list_tickets", "update_ticket", "close_ticket",
+            "calculate_reimbursement", "check_expense_policy", "submit_expense", "get_expense",
+            "list_expenses", "send_email", "send_notification"]
+manager  = ["@employee", "get_direct_reports"]
+it_admin = ["@employee", "delete_record"]
+hr_admin = ["@employee", "get_direct_reports", "export_employee_directory"]
+finance  = ["@employee", "approve_expense", "delete_record"]
+
+# Fields removed from tool output unless the principal is allowed to see them.
+[redaction]
+sensitive_employee_fields = ["salary_inr", "phone"]
